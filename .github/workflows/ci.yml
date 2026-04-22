@@ -22,7 +22,7 @@ jobs:
 
       # TODO(step-6b): build the image locally with tag $IMAGE_NAME:${{ github.sha }}.
       - name: Build image
-        run: 
+        run: docker build -t $IMAGE_NAME:${{ github.sha }} .
 
       # scan the freshly built image with Trivy. Fail the job on CRITICAL.
       - name: Scan image with Trivy
